@@ -16,23 +16,23 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 En este caso, se creo el formulario para el ingreso correcto de los datos de los estudiantes, asi mismo podiendole alertas en caso de que el formulario quede vacio.
 
-<img src="assets/images/EstudianteRegistro.png" alt="Registro de estudiante">
+<img src="assets/Imagesdeber/EstudianteRegistro.png" alt="Registro de estudiante">
 
-<img src="assets/images/EstudianteError.png" alt="Error al completar">
+<img src="assets/Imagesdeber/EstudianteError.png" alt="Error al completar">
 
 ### Registro representante
 
 Asi mismo, se creo el formulario para el ingreso de los datos del representante junto con su mensaje de error.
 
-<img src="assets/images/Representarnte registro.png" alt="Registro de representante">
+<img src="assets/Imagesdeber/Representarnte registro.png" alt="Registro de representante">
 
-<img src="assets/images/RepresentanteError.png" alt="Error al dejar vacio">
+<img src="assets/Imagesdeber/RepresentanteError.png" alt="Error al dejar vacio">
 
 ### Registro calificaciones
 
 Por ultimo, se creo la tabla con su respectivo modal para el ingreso de tareas y calificaciones
 
-<img src="assets/images/ModalCalificacion.png" alt="Tabla y Modal">
+<img src="assets/Imagesdeber/ModalCalificacion.png" alt="Tabla y Modal">
 
 
 
