@@ -1,0 +1,58 @@
+<form #formDatosRepresentante="ngForm" (ngSubmit)="guardarRepresentante()" autocomplete="off">
+    <div>
+        <br>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="">Nombres</label>
+                    </div>
+                    <div>
+                        <input class="form-control" [(ngModel)]="nombre" #nombre="ngModel" [required]="true" [pattern]="'[a-zA-Z ]{2,254}'" type="text" minlength="9" placeholder="Ingrese sus nombres" name="nombre" id="nombreid">
+                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger"> CAMPO INVALIDO </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <label for="">Apellidos</label>
+                    {{ nombre }}
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese sus apellidos" name="apellido" id="apellidoid">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="relacion">Relacion</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese su relacion" name="relacion" id="relacionid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <label for="telefono">Telefono</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese su telefono" name="curso" id="telefonoid">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="email">Email</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="email" placeholder="Ingrese su email" name="email" id="emailid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <button type=" button" (click)="guardarRepresentante()" class="btn btn-primary" >Agregar Representante</button>
+</div>

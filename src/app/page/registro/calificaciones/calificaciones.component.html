@@ -1,0 +1,42 @@
+<nav class="navbar bg-body-tertiary row text-end container-fluid	">
+    <div class="col labelUser">
+        <label for="" class="text-info">{{usuario}}</label>
+    </div>
+</nav>
+<div class="container">
+<app-modalcalificaciones [textModal]="'Agregar Reporte'" (emiter)="guardar($event)"/>
+<table class="table mt-3 text-center">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Tarea</th>
+        <th scope="col">Descripcion Tarea</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Fin</th>
+        <th scope="col">Calificacion</th>
+        <th scope="col">Estado</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        @for (item of calificacion; track $index) {
+            <<tr *ngFor="let calificacion of calificacion">>
+              <th scope="row">{{$index+1}}</th>
+              <td>{{ calificacion.nombre_tarea }}</td>
+              <td>{{ calificacion.descrip_tarea }}</td>
+              <td>{{ calificacion.fecha_inicio }}</td>
+              <td>{{ calificacion.fecha_fin }}</td>
+              <td>{{ calificacion.calificacion }}</td>
+              <td [ngSwitch]="calificacion.estado" > 
+                <ng-template [ngSwitchCase]="'>7'">
+                    Aprobado
+                </ng-template>
+                <ng-template [ngSwitchCase]="'<7'">
+                    Reprobado
+                </ng-template>    
+              <td><button class="btn btn-danger ms-3" (click)="removeCalificacion($index)">Delete</button></td>
+            </tr>
+        }
+    </tbody>
+  </table>
+</div>

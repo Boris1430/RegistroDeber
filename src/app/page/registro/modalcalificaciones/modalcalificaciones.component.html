@@ -1,0 +1,68 @@
+<div class="mt-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#'+idCalificacion" data-bs-whatever="@mdo">{{textModal}}</button>
+<div class="modal fade" id="{{idCalificacion}}" tabindex="-1" aria-labelledby="ExampleModalModel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ExampleModalModel">{{textModal}}</h1>
+          <button type="button" class="btn-close" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <form [formGroup]="form" (ngSubmit)="guardar()" method="post">
+            <div class="mb-3">
+              <label for="nombre_tareaId" class="col-form-label">Nombre Tarea:</label>
+              <input type="text" class="form-control" id="nombre_tareaId" name="nombre_tarea"
+              [class.is-invalid]="getInvalid('nombre_tarea')" [(ngModel)]="calificacion.nombre_tarea" formControlName="nombre_tarea">
+              @if(getInvalid('nombre_tarea')){
+                <p class="text-danger">Nombre Tarea Invalido</p>
+              }
+            </div>
+            <div class="mb-3 ">
+                <label for="descrip_tareaId" class="col-form-label">Descripcion Tarea:</label>
+                <input type="text" class="form-control" id="descrip_tareaId" name="descrip_tarea"
+                [class.is-invalid]="getInvalid('nombre')" [(ngModel)]="calificacion.descrip_tarea" formControlName="descrip_tarea">
+                @if(getInvalid('descrip_tarea')){
+                  <p class="text-danger">Descripcion invalida</p>
+                }
+              </div>
+              <div class="mb-3 ">
+                <label for="fecha_inicioId" class="col-form-label">Fecha Inicio:</label>
+                <input type="text" class="form-control" id="fecha_inicioId" name="fecha_inicio"
+                [class.is-invalid]="getInvalid('fecha_inicio')" [(ngModel)]="calificacion.fecha_inicio" formControlName="fecha_inicio">
+                @if(getInvalid('fecha_inicio')){
+                  <p class="text-danger">Fecha Inicio invalida</p>
+                }
+              </div>
+              <div class="mb-3">
+                <label for="fecha_finId" class="col-form-label">Fecha Fin:</label>
+                <input type="text" class="form-control" id="fecha_finId" name="fecha_fin"
+                [class.is-invalid]="getInvalid('fecha_fin')" [(ngModel)]="calificacion.fecha_fin" formControlName="fecha_fin">
+                @if(getInvalid('fecha_fin')){
+                  <p class="text-danger">Fecha Fin Invalida</p>
+                }
+              </div>
+              <div class="mb-3">
+                <label for="calificacionId" class="col-form-label">Calificacion:</label>
+                <input type="number" class="form-control" id="calificacionId" name="calificacion"
+                [class.is-invalid]="getInvalid('calificacion')" [(ngModel)]="calificacion.calificacion" formControlName="calificacion">
+                @if(getInvalid('calificacion')){
+                  <p class="text-danger">Calificacion Requerida</p>
+                }
+              </div>
+              <div class="mb-3">
+                <label for="estadoId" class="col-form-label">Estado:</label>
+                <select name="recipient-genre" type="text" [(ngModel)]="calificacion.estado" class="form-control" id="estadoId" required>
+                    <option value=">7"> Aprobado</option>
+                    <option value="<7"> Reprobado</option>
+                </select>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnCerrar" #btnCerrar class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type=" button" (click)="guardar()" class="btn btn-primary" >Guardar Calificacion</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

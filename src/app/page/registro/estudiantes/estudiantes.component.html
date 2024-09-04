@@ -1,0 +1,48 @@
+<form #formDatosEstudiantes="ngForm" (ngSubmit)="guardarEstudiante()" autocomplete="off">
+    <div>
+        <br>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="">Nombres</label>
+                    </div>
+                    <div>
+                        <input class="form-control" [(ngModel)]="nombre" #nombre="ngModel" [required]="true" [pattern]="'[a-zA-Z ]{2,254}'" type="text" minlength="9" placeholder="Ingrese sus nombres" name="nombre" id="nombreid">
+                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger"> CAMPO INVALIDO </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <label for="">Apellidos</label>
+                    {{ nombre }}
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese sus apellidos" name="apellido" id="apellidoid">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="fechanacimiento">Fecha de Nacimiento</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese su fecha de nacimiento" name="fechanacimiento" id="fechanacimientoid">
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <label for="segundoapellido">Curso</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" placeholder="Ingrese su curso" name="curso" id="cursoid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <button type=" button" (click)="guardarEstudiante()" class="btn btn-primary" >Agregar Estudiante</button>
+</div>
